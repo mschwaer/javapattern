@@ -1,6 +1,8 @@
 package at.sma.pattern;
 
+import at.sma.pattern.actors.Circle;
 import at.sma.pattern.actors.RectangleLG;
+import at.sma.pattern.actors.Triangle;
 import at.sma.pattern.pattern.Singleton;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
@@ -19,6 +21,8 @@ public class Main extends ApplicationAdapter {
     private BitmapFont font;
     Sprite backGroundSprite;
     RectangleLG rlg;
+    Triangle tri,tri2;
+    Circle cir;
 
     @Override
     public void create() {
@@ -27,7 +31,9 @@ public class Main extends ApplicationAdapter {
         font = new BitmapFont();
         backGroundSprite = new Sprite(new Texture("background_800.jpg"));
         backGroundSprite.setPosition(0,0);
-        rlg = new RectangleLG(10,300,40,40, Color.BLACK);
+        rlg = new RectangleLG(100,300,40,40, Color.BLACK);
+        tri = new Triangle(100,200,40,40,Color.RED);
+        cir = new Circle(100,100,40,Color.YELLOW);
     }
 
     @Override
@@ -36,7 +42,9 @@ public class Main extends ApplicationAdapter {
         batch.begin();
         backGroundSprite.draw(batch);
         font.draw(batch, Singleton.writeText(),10,100);
+        tri.draw(batch);
         rlg.draw(batch,100);
+        cir.draw(batch,100);
         batch.end();
 
     }
