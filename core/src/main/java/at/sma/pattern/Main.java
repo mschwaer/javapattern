@@ -39,6 +39,9 @@ public class Main extends ApplicationAdapter {
     @Override
     public void render() {
         ScreenUtils.clear(0.15f, 0.15f, 0.2f, 1f);
+        // update
+
+        // render
         batch.begin();
         backGroundSprite.draw(batch);
         font.draw(batch, Singleton.writeText(),10,100);
