@@ -6,10 +6,12 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 
+import java.awt.*;
+
 public class Circle extends Actor {
 
     private Texture texture;
-
+    private Point point;
     public Circle(int x, int y, int durchmesser , Color color) {
         setX(x);
         setY(y);
@@ -17,6 +19,7 @@ public class Circle extends Actor {
         setHeight(durchmesser);
         setColor(color);
         createTexture();
+        this.point = new Point(x, y);
     }
 
     private void createTexture() {
