@@ -6,15 +6,11 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 
-public class Triangle extends Actor {
-    private Texture texture;
+public class Triangle extends GameObject {
+
 
     public Triangle(float x, float y, float width, float height, Color color) {
-        setX(x);
-        setY(y);
-        setWidth(width);
-        setHeight(height);
-        setColor(color);
+        super(x, y, width, height, color);
         createTexture((int)width, (int)height, getColor());
     }
 
@@ -27,7 +23,5 @@ public class Triangle extends Actor {
         pixmap.dispose();
     }
 
-    public void draw(Batch batch) {;
-        batch.draw(texture, getX(), getY(), getWidth(), getHeight());
-    }
+
 }

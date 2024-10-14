@@ -8,18 +8,12 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 
 import java.awt.*;
 
-public class Circle extends Actor {
+public class Circle extends GameObject {
 
-    private Texture texture;
-    private Point point;
     public Circle(int x, int y, int durchmesser , Color color) {
-        setX(x);
-        setY(y);
-        setWidth(durchmesser);
-        setHeight(durchmesser);
-        setColor(color);
+        super(x, y, durchmesser, durchmesser, color);
         createTexture();
-        this.point = new Point(x, y);
+
     }
 
     private void createTexture() {
@@ -30,8 +24,5 @@ public class Circle extends Actor {
         pixmap.dispose();
     }
 
-    @Override
-    public void draw(Batch batch, float parentAlpha) {
-        batch.draw(texture, getX(), getY(), getWidth(), getHeight());
-    }
+
 }
